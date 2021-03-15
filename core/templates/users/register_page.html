@@ -1,0 +1,14 @@
+{% extends 'base/base.html' %}
+
+{% block title %}
+    Форма регистрации
+{% endblock %}
+
+{% block content %}
+    <form method="POST">
+        {% csrf_token %}
+        {{ registration_form.as_p }}
+        <input type="submit" role="button" class="btn btn-success" name="new_user" value="Зарегистрироваться">
+    </form>
+        <a href="#">Уже зарагистрированы?</a>
+{% endblock %}
